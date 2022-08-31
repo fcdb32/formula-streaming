@@ -24,9 +24,3 @@ A stream of argument sets can be provided by continuously reading from a file in
 docker pull ghcr.io/fcdb32/formula-streaming:main
 docker run ghcr.io/fcdb32/formula-streaming:main
 ```
-
-# Formula parsing
-
-Formula parser used developed by [yamnikov-oleg](https://gist.github.com/yamnikov-oleg)
-
-See https://blog.oyam.dev/python-formulas/

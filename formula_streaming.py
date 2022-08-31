@@ -1,11 +1,11 @@
-import functools
+from ast import Expression, parse
 import random
 
 from time import sleep
 
-from evaluate_formula import evaluate_formula
 
-formulas = [line.strip() for line in open('formulas.txt', 'r')]
+str_formulas = [line.strip() for line in open('formulas.txt', 'r')]
+compiled_formulas = [compile(Expression(parse(formula).body[0].value), '<string>', 'eval') for formula in str_formulas]
 
 while True:
     args = {
@@ -14,10 +14,11 @@ while True:
         'c': random.randint(1, 1000)
     }
 
-    results = list(map(functools.partial(evaluate_formula, vars=args), formulas))
+    results = [eval(formula, args) for formula in compiled_formulas]
 
+    del args['__builtins__']
     args_output = ', '.join(f'{var} = {value}' for var, value in args.items())
-    results_output = '\n'.join(f'{formula} = {result}' for formula, result in zip(formulas, results))
+    results_output = '\n'.join(f'{str(formula)} = {result}' for formula, result in zip(str_formulas, results))
 
     print(args_output, results_output, sep='\n')
 
