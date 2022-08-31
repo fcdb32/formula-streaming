@@ -18,9 +18,6 @@ A heavy load is expected, so it is impossible to parse formulas for each data se
 It is necessary to ensure that formulas are compiled only at the start of the application.
 A stream of argument sets can be provided by continuously reading from a file in a loop, or by continuously generating random numbers.
 
-All development must be done in the public GitHub or GitLab repository and the final version of the code must be available in it.
-Using CI/CD practices would be a plus.
-
 # Usage
 
 ```
