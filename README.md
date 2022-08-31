@@ -20,3 +20,15 @@ A stream of argument sets can be provided by continuously reading from a file in
 
 All development must be done in the public GitHub or GitLab repository and the final version of the code must be available in it.
 Using CI/CD practices would be a plus.
+
+# Usage
+
+```
+docker pull ghcr.io/fcdb32/formula-streaming:main
+docker run ghcr.io/fcdb32/formula-streaming:main
+```
+
+# Formula parsing
+
+Formula parser used developed by [yamnikov-oleg](https://gist.github.com/yamnikov-oleg)
+See https://blog.oyam.dev/python-formulas/
